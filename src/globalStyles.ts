@@ -17,6 +17,11 @@ const GlobalStyle = createGlobalStyle`
         font: 400 16px 'Roboto';
     }
 
+    a, button {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
 `
 
 export default GlobalStyle

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import illustrationImg from '../assets/illustration.svg';
 import logoImg from '../assets/logo.svg';
-import googleIconImg from '../assets/google-icon.svg';
-import loginImg from '../assets/log-in.svg';
+
 import { Button } from '../components/Button'
 
 export const HomeStyles = styled.div`
@@ -53,15 +52,15 @@ export const MainStyles = styled.main`
 		max-width: 320px;
 		align-items: stretch;
 		text-align: center;
-
-		> img {
-		align-self: center;
+        
+        > img {
+		    align-self: center;
 		}
 
 		h2 {
-		font-size: 24px;
-		margin: 64px 0 24px;
-		font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            margin: 64px 0 24px;
+            font-family: 'Poppins', sans-serif;
 		}
 
 		form {
@@ -82,57 +81,23 @@ export const MainStyles = styled.main`
 			}
 		}
 
-		> button {
-			margin-top: 64px;
-			height: 50px;
-			border-radius: 8px;
-			font-weight: 500;
-			background: #ea4335;
-			color: #FFF;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			cursor: pointer;
-			border: 0;
-			transition: filter 0.2s;
+		p {
+		font-size: 14px;
+		color: #737380;
+		margin-top: 16px;
 
-			img {
-				margin-right: 8px;
-			}
-
-			&:hover {
-				filter: brightness(0.9);
+			a {
+				color: #e559f9;
+                text-decoration: none;
 			}
 		}
+
+		
 	}
 
-	.separator {
-		font-size: 14px;
-		color: #a8a8b3;
-
-		margin: 32px 0;
-		display: flex;
-		align-items: center;
-
-		&::before, &::after {
-		content: '';
-		flex: 1;
-		height: 1px;
-		background: #a8a8b3;
-		margin-right: 16px;
-		}
-
-		&::after {
-		content: '';
-		flex: 1;
-		height: 1px;
-		background: #a8a8b3;
-		margin-left: 16px;
-		}
-  	}
 `;
 
-export function Home() {
+export function NewRoom() {
 	return (
 		<HomeStyles>
 			<AsideStyles>
@@ -143,18 +108,15 @@ export function Home() {
 			<MainStyles>
 				<div className='content'>
 					<img src={logoImg} alt='Logo Letmeask' />
-					<button>
-						<img src={googleIconImg} alt='Logo Gooogle' />
-						Crie sua sala com o Google
-					</button>
-					<div className='separator'>ou entre em uma sala</div>
+
+                    <h2>Criar uma nova sala</h2>
 					<form>
-						<input type='text' placeholder='Digite o código da sala' />
+						<input type='text' placeholder='Nome da sala' />
 						<Button type='submit'>
-							<img src={loginImg} alt='Login' />
-							Entrar na sala
+							Criar sala
 						</Button>
 					</form>
+                    <p>Quer entrar em uma sala existente? <a href="#">Clique aqui</a></p>
 				</div>
 			</MainStyles>
 		</HomeStyles>
