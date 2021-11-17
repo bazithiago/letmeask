@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import illustrationImg from '../assets/illustration.svg';
 import logoImg from '../assets/logo.svg';
-
 import { Button } from '../components/Button'
+
 
 export const HomeStyles = styled.div`
 	display: flex;
@@ -116,7 +118,7 @@ export function NewRoom() {
 							Criar sala
 						</Button>
 					</form>
-                    <p>Quer entrar em uma sala existente? <a href="#">Clique aqui</a></p>
+                    <p>Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link></p>
 				</div>
 			</MainStyles>
 		</HomeStyles>

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components';
 import illustrationImg from '../assets/illustration.svg';
 import logoImg from '../assets/logo.svg';
@@ -133,6 +134,12 @@ export const MainStyles = styled.main`
 `;
 
 export function Home() {
+	const history = useNavigate();
+
+	function navigateToNewRoom() {
+		history('/rooms/new');
+	};
+
 	return (
 		<HomeStyles>
 			<AsideStyles>
@@ -143,7 +150,7 @@ export function Home() {
 			<MainStyles>
 				<div className='content'>
 					<img src={logoImg} alt='Logo Letmeask' />
-					<button>
+					<button onClick={navigateToNewRoom}>
 						<img src={googleIconImg} alt='Logo Gooogle' />
 						Crie sua sala com o Google
 					</button>
